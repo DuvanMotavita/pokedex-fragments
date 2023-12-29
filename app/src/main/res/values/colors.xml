@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+    <color name="display_options_not_selected">#bdc3c7</color>
+    <color name="display_options_selected">#d35400</color>
+    <color name="fragment_stats_hp">#DCFF78D8</color>
+    <color name="fragment_stats_attack">#D5FF3636</color>
+    <color name="fragment_stats_defense">#00B348</color>
+    <color name="fragment_stats_speed">#FFC107</color>
 </resources>

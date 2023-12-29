@@ -72,17 +72,30 @@ public class PokemonListFragment extends Fragment {
         ListView pokemonListView = (ListView) view.findViewById(R.id.pokemon_listView);
 
         ArrayList<Pokemon> pokemonList = new ArrayList<>();
-        pokemonList.add(new Pokemon("1", "Bulbasaur",R.drawable.bulbasaur, Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("2", "Ivysaur",R.drawable.ivysaur, Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("3", "Venuasaur",R.drawable.venusaur, Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("4", "Charmander",R.drawable.charmander, Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("5", "Charmeleon",R.drawable.charmeleon, Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("6", "Charizard",R.drawable.charizard, Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("7", "Squirtle",R.drawable.squirtle, Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("8", "Wartortle",R.drawable.wartortle, Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("9", "Blastoise",R.drawable.blastoise, Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("25", "Pikachu",R.drawable.pikachu, Pokemon.Type.ELECTRIC));
-        pokemonList.add(new Pokemon("26", "Raichu",R.drawable.raichu, Pokemon.Type.ELECTRIC));
+
+        Stats bulbasaurStats = new Stats("45","49","49","65");
+        Stats ivysaurStats = new Stats("60","62","63","60");
+        Stats venuasaurStats = new Stats("80","82","83","100");
+        Stats charmanderStats = new Stats("39","52","43","50");
+        Stats charmeleonStats = new Stats("58","64","58","65");
+        Stats charizardStats = new Stats("78","84","78","85");
+        Stats squirtleStats = new Stats("44","48","65","64");
+        Stats wartortleStats = new Stats("59","63","80","80");
+        Stats blastoiseStats = new Stats("79","83","100","105");
+        Stats pikachuStats = new Stats("35","55","40","50");
+        Stats raichuStats = new Stats("60","85","50","85");
+
+        pokemonList.add(new Pokemon("1", "Bulbasaur","https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",R.raw.bulbasaur, Pokemon.Type.PLANT, bulbasaurStats));
+        pokemonList.add(new Pokemon("2", "Ivysaur","https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",R.raw.ivysaur, Pokemon.Type.PLANT, ivysaurStats));
+        pokemonList.add(new Pokemon("3", "Venuasaur","https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",R.raw.venuasaur, Pokemon.Type.PLANT, venuasaurStats));
+        pokemonList.add(new Pokemon("4", "Charmander","https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",R.raw.charmander, Pokemon.Type.FIRE,charmanderStats));
+        pokemonList.add(new Pokemon("5", "Charmeleon","https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png",R.raw.charmeleon, Pokemon.Type.FIRE, charmeleonStats));
+        pokemonList.add(new Pokemon("6", "Charizard","https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",R.raw.charizard, Pokemon.Type.FIRE, charizardStats));
+        pokemonList.add(new Pokemon("7", "Squirtle","https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",R.raw.squirtle, Pokemon.Type.WATER,squirtleStats));
+        pokemonList.add(new Pokemon("8", "Wartortle","https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png",R.raw.wartortle, Pokemon.Type.WATER,wartortleStats));
+        pokemonList.add(new Pokemon("9", "Blastoise","https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png",R.raw.blastoise, Pokemon.Type.WATER,blastoiseStats));
+        pokemonList.add(new Pokemon("25", "Pikachu","https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",R.raw.pikachu, Pokemon.Type.ELECTRIC,pikachuStats));
+        pokemonList.add(new Pokemon("26", "Raichu","https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png",R.raw.raichu, Pokemon.Type.ELECTRIC,raichuStats));
 
         final PokemonListAdapter adapter = new PokemonListAdapter(getActivity(), R.layout.pokemon_list_item,
                 pokemonList);
@@ -131,5 +144,7 @@ public class PokemonListFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         void onPokemonSelected(Pokemon pokemon);
+
+        void onClick(View view);
     }
 }

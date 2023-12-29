@@ -3,17 +3,21 @@ package com.almaralengineering.pokedex;
 public class Pokemon {
     private String id;
     private String name;
-    private int imageId;
+    private String imageUrl;
+    private int soundId;
+    private Stats stats;
     private Type type;
 
     public enum Type {
         FIRE, WATER, PLANT, ELECTRIC
     }
 
-    public Pokemon(String id, String name, int imageId, Type type) {
+    public Pokemon(String id, String name, String imageUrl,int soundId, Type type, Stats stats) {
         this.id = id;
         this.name = name;
-        this.imageId = imageId;
+        this.imageUrl = imageUrl;
+        this.soundId = soundId;
+        this.stats = stats;
         this.type = type;
     }
 
@@ -25,11 +29,17 @@ public class Pokemon {
         return name;
     }
 
-    public int getImageId(){
-        return imageId;
+    public String getImageUrl(){
+        return imageUrl;
+    }
+
+    public int getSoundId(){
+        return soundId;
     }
 
     public Type getType() {
         return type;
     }
+
+    public Stats getStats(){ return stats;}
 }
